@@ -1,0 +1,63 @@
+{
+  "name": "lucas-lehmer",
+  "version": "0.0.0",
+  "description": "A Javascript Implementation of the Lucas-Lehmer Primality Test for Mersenne Primes",
+  "license": "MIT",
+  "author": {
+    "name": "Adam Kelly",
+    "email": "adam.guitar12@gmail.com",
+    "url": "http://github.com/adamisntdead"
+  },
+  "main": "dist/lucas-lehmer.js",
+  "module": "dist/lucas-lehmer.mjs",
+  "jsnext:main": "dist/lucas-lehmer.mjs",
+  "keywords": [
+    "prime",
+    "primality",
+    "test",
+    "math",
+    "mersenne prime",
+    "mersenne",
+    "2n - 1"
+  ],
+  "repository": "adamisntdead/lucas-lehmer",
+  "scripts": {
+    "clean": "rimraf dist/ && mkdirp dist/",
+    "lint": "standard --fix",
+    "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -s -r 0",
+    "prebuild": "npm run clean -s && npm run lint -s",
+    "build": "rollup --config",
+    "build:watch": "npm run build -- --watch",
+    "preversion": "npm run build",
+    "test": "ava",
+    "test:watch": "npm test -- --watch",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "dependencies": {
+    "bignumber.js": "^4.0.0"
+  },
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-cli": "6.6.5",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-register": "6.7.2",
+    "babelrc-rollup": "^3.0.0",
+    "conventional-changelog": "^1.1.3",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-watch": "^3.2.2",
+    "standard": "^9.0.2"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  }
+}
