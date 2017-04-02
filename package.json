@@ -1,6 +1,6 @@
 {
   "name": "lucas-lehmer",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "A Javascript Implementation of the Lucas-Lehmer Primality Test for Mersenne Primes",
   "license": "MIT",
   "author": {
