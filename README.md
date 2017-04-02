@@ -12,6 +12,13 @@
 npm install --save lucas-lehmer
 ```
 
+or
+
+```sh
+yarn add lucas-lehmer
+```
+
+
 ## Usage
 
 ```js
